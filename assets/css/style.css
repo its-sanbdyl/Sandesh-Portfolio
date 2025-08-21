@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); /*Michroma*/
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); /* Backup for Michroma- Ubuntu*/
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); /*Space Mono*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 :root {
     --primary-color: hsl(0, 100%, 50%);
     --secondary-color: hsl(0, 100%, 80%);
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 100%, 100%);
-    --black-75: hsl(0, 0%, 5%);
+    --black-75: hsl(0, 0%, 8%);
     --black-20: hsl(0, 0%, 10%);
 }
 
@@ -62,7 +63,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 4px;
-    color: white;
+    color: var(--white);
 }
 
 .logo-tagslash {
@@ -432,6 +433,7 @@ body {
     align-items: center;
     font-weight: bold;
     letter-spacing: -15px;
+    user-select: none;
 }
 
 .code-tag span {
@@ -585,6 +587,38 @@ body {
     background-color: var(--primary-color);
 }
 
+.skills-language-img-html {
+    background-color: rgb(255, 81, 0);
+}
+
+.lan-html p {
+    color: rgb(255, 81, 0);
+}
+
+.skills-language-img-css {
+    background-color: rgb(25, 106, 211);
+}
+
+.lan-css p {
+    color: rgb(25, 106, 211);
+}
+
+.skills-language-img-js {
+    background-color: orange;
+}
+
+.lan-js p {
+    color: orange;
+}
+
+.skills-language-img-react {
+    background-color: rgb(54, 167, 196);
+}
+
+.lan-react p {
+    color: rgb(54, 167, 196);
+}
+
 .skills-language p {
     font-size: 0.9rem;
     font-weight: bold;
@@ -634,11 +668,14 @@ body {
 
 .works-link {
     translate: 85px -260px;
-    font-weight: bold;
     position: relative;
 }
 
-.works-link:hover::before {
+.works-link:hover {
+    font-weight: bold;
+}
+
+.works-link:hover::before, .blogs-read-more-link:hover::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -649,7 +686,7 @@ body {
     background: linear-gradient(to left, var(--white) , var(--white)) bottom / 100% 2px no-repeat;
 }
 
-.works-link:hover::after {
+.works-link:hover::after, .blogs-read-more-link:hover::after {
     position: absolute;
     content: '';
     width: 8px;
@@ -661,7 +698,7 @@ body {
     left: -2%;
 }
 
-.works-link:hover span {
+.works-link:hover span, .blogs-read-more-link:hover span {
     position: absolute;
     content: '';
     width: 8px;
@@ -744,6 +781,14 @@ body {
     font-size: 0.8rem;
     font-family: Space Mono, Michroma, Ubuntu, sans-serif, arial;
     text-align: start;
+}
+
+.blogs-read-more-link {
+    position: relative;
+}
+
+.blogs-read-more-link:hover {
+    font-weight: bold;
 }
 
 .blogs-sub-info-container {
@@ -973,17 +1018,37 @@ body {
     overflow: visible;
 }
 
+.developer a {
+    font-family: Caveat;
+    font-size: 1rem;
+}
+
 .go-to-top {
     position: fixed;
     right: 3%;
     bottom: 5%;
-    width: 50px;
-    height: 50px;
+    width: clamp(50px, 5vw, 70px);
+    height: clamp(50px, 5vw, 70px);
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     font-size: 3rem;
     overflow: visible;
     background-color: var(--primary-color);
     border-radius: 100%;
+}
+
+.go-to-top svg {
+    fill: var(--black);
+    overflow: visible;
+}
+
+.go-to-top:hover {
+    background-color: transparent;
+    border: solid 2px var(--primary-color);
+    box-shadow: 0px 0px 20px var(--primary-color);
+}
+
+.go-to-top:hover svg {
+    fill: var(--primary-color);
 }
