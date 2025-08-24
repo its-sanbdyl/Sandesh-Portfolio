@@ -21,6 +21,7 @@
 html {
     font-family: Michroma, Ubuntu, sans-serif, arial;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 a {
@@ -29,9 +30,8 @@ a {
 }
 
 body {
-    overflow-x: hidden;
-    margin: 0 50px;
     background-color: var(--black);
+    padding: 0 clamp(0.1rem, 5vw, 5rem);
     color: var(--white);
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .hero {
-    height: 100vh;
+    height: 100%;
 }
 
 .nav-bar {
@@ -85,7 +85,15 @@ body {
     gap: 1rem;
 }
 
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
 .search-bar {
+    width: clamp(80%, 100%, 100%);
     height: 20px;
     width: auto;
     border-radius: 10px;
@@ -99,10 +107,12 @@ body {
 }
 
 .search-btn {
+    width: 20px;
+    height: 20px;
     background-color: transparent;
-    translate: -25px 2px;
     border: none;
     cursor: pointer;
+    translate: -23px 1px;
 }
 
 .social-links {
@@ -127,7 +137,8 @@ body {
 }
 
 .hero-content-container {
-    min-width: 100%;
+    width: 100%;
+    height: min-content;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -248,12 +259,13 @@ body {
 }
 
 .hero-intro-title {
-    width: 100%;
+    width: max-content;
     display: flex;
     justify-content: start;
     align-items: end;
     flex-direction: row;
     padding-left: 20px;
+    font-size: clamp(2rem, 2vw + 0.5rem, 3rem);
 }
 
 .hero-intro-p-title-top {
@@ -318,8 +330,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-
+    height: max-content;
 }
 
 .scroll-down-container {
@@ -396,7 +407,7 @@ body {
     background-color: var(--black-75);
     color: var(--white);
     padding: 20px 30px;
-    border-radius: 20px;
+    border-radius: 50px;
     display: inline-flex;
     flex-direction: column;
     gap: 1.5em;
@@ -543,6 +554,7 @@ body {
 }
 
 .skills-card {
+    min-width: max-content;
     background-color: var(--white);
     color: var(--black);
     text-align: center;
@@ -641,12 +653,12 @@ body {
 }
 
 .works-carousel {
-    width: 100%;
+    width: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -662,7 +674,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 100%;
+    width: 400px;
+    height: auto;
     position: relative;
 }
 
@@ -710,24 +723,25 @@ body {
     right: -8%;
 }
 
-.works-carousel-btn-container {
+.works-prev-btn, .works-next-btn {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 50%;
     top: 40%;
-}
-
-.works-prev-btn, .works-next-btn {
     background-color: var(--black-75);
     padding: 15px;
     border: solid 2px var(--black-20);
     border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+}
+
+.works-prev-btn {
+    left: -15%;
+}
+
+.works-next-btn {
+    right: -15%;
 }
 
 .works-prev-btn:hover, .works-next-btn:hover {
@@ -740,27 +754,29 @@ body {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    padding: 20px 180px;
+    padding: 20px clamp(10px, 3vw, 50px);
     text-align: center;
 }
 
 .blogs-paragraph {
     font-family: Space Mono, Michroma, Ubuntu, sans-serif, arial;
+    font-size: clamp(0.5rem, 4vw, 1rem);
 }
 
 .blogs-hr {
-    margin: 30px;
+    margin: 30px 0px;
 }
 
 .blogs-item {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 3em;
+    align-items: start;
+    gap: clamp(5px, 3vw, 30px);
 }
 
 .blog-item-img {
-    width: 25%;
+    width: 20%;
     margin: 0px 10px;
 }
 
@@ -774,7 +790,7 @@ body {
 
 .blogs-item-title {
     white-space: nowrap;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
 .blogs-item-paragraph {
@@ -797,6 +813,7 @@ body {
     align-items: center;
     font-size: 0.7rem;
     gap: 1.1em;
+    white-space: nowrap;
 }
 
 .blogs-category {
@@ -867,7 +884,7 @@ body {
 .contact-container {
     padding: 30px 0px 10px 0px;
     text-align: center;
-    height: 150vh;
+    height: auto;
 }
 
 .contact-paragraph {
@@ -889,7 +906,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: start;
-    padding: 0px 20%;
+    padding: 0rem clamp(10px, 5vw, 80px);
 }
 
 .contact-name-email-container {
@@ -897,7 +914,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 8em;
+    gap: 4em;
 }
 
 .contact-name-container, .contact-email-container {
@@ -935,7 +952,7 @@ body {
 
 .contact-submit-btn {
     font-size: 1.2rem;
-    margin-top: 50px;
+    margin: 50px 0px;
     padding: 10px 30px;
     border-radius: 30px;
     font-family: Space Mono, Michroma, Ubuntu, sans-serif, arial;
@@ -987,10 +1004,18 @@ body {
 
 .footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     font-size: 0.7rem;
     padding: 5px 0px;
+    gap: 4em;
+}
+
+.top-footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4em;
 }
 
 .policy-tnc-container {
@@ -1051,4 +1076,85 @@ body {
 
 .go-to-top:hover svg {
     fill: var(--primary-color);
+}
+
+@media(max-width: 1240px) {
+    .social-link span {
+        display: none;
+    }
+
+    .hero-content-container {
+        min-height: fit-content;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-content-container {
+        flex-direction: column;
+        padding: 0% 10%;
+    }
+
+    .about-me-img {
+        max-width: 70%;
+    }
+
+    .footer {
+        gap: 2em;
+    }
+
+    .top-footer-section {
+        gap: 2em;
+    }
+}
+
+@media(max-width: 950px) {
+    .search-bar {
+        display: none;
+    }
+
+    .search-btn {
+        translate: 0px 1px;
+    }
+
+    .search-btn svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    .search-btn svg g path {
+        stroke: var(--white);
+    }
+
+    .nav-items {
+        gap: 2rem;
+    }
+
+    .hero-intro-sidebox-container {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .hero-intro-container {
+        max-width: 100%;
+    }
+
+    .hero-intro-title {
+        font-size: clamp(1rem, 2vw + 1.2rem, 3rem) !important;
+    }
+
+    .hero-sidebox-container {
+        margin: 50px auto;
+    }
+
+    .scroll-down-container {
+        display: none;
+    }
+
+    .code-tag {
+        display: none;
+    }
+
+    .skills-languages-container {
+        width: 50%;
+    }
 }
