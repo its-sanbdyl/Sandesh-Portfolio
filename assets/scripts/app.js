@@ -47,3 +47,7 @@ Input.addEventListener("input", () => {
         SearchItemContainer.innerHTML = `<p class="search-default" style="text-align:center;">No Data Found!</p>`;
     }
 });
+
+// Carousel of Works Section
+
+const Slider = 
