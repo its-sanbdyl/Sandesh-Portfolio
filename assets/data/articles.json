@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "What does it take to become a web developer?",
+        "url": "/blogs/what-does-it-take-to-become-a-web-developer/",
+        "tags": ["Web Developer", "Blog"],
+        "img": "/assets/img/blogs/web-developer.avif"
+    }
+    ,
+    {
+        "id": 2,
+        "title": "Inside Nvidia's Blackwell & Rubin Roadmap: What to Expect from the Next-Gen AI Chips?",
+        "url": "/blogs/inside-nvidias-blackwell-rubin-roadmap-what-to-expect-from-the-next-gen-ai-chips/",
+        "tags": ["AI", "Nvidia", "Blog"],
+        "img": "/assets/img/blogs/blackwell-nvidia.avif"
+    }
+]

@@ -41,13 +41,22 @@
 }
 
 .blogs-item-paragraph {
-    font-size: 0.85rem;
+    font-size: clamp(0.9rem, 3.5vw, 1.15rem);
 }
 
 .blogs-item-para-heading {
     text-align: start;
-    padding: 10px 0px;
-    font-size: 0.9rem;
+    padding: 30px 0px 15px 0px;
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
+}
+
+.blogs-ul {
+    font-family: Poppins, sans-serif, arial;
+}
+
+.blogs-li {
+    text-align: start;
+    font-size: clamp(0.9rem, 3.5vw, 1.15rem);
 }
 
 .article-sub-title {
@@ -56,12 +65,8 @@
     
 }
 
-/* @media(max-width: 700px) {
-    .blogs-item {
-        flex-direction: row;
+@media(max-width: 400px) {
+    .blogs-container {
+        padding: 45px 10px 20px 10px;
     }
-
-    .blog-item-img {
-        height: auto;
-    }
-} */
+}

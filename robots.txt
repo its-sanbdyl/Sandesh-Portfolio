@@ -1,0 +1,13 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: BraveBot
+Allow: /
+
+User-agent: *
+Disallow:
+
+Sitemap: https://www.sandeshbudiyal.com.np/sitemap.xml
